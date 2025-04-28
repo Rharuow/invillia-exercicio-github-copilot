@@ -15,6 +15,11 @@ body {
   background-color: #e3f2fd;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
 header {
   text-align: center;
   padding: 30px 0;
@@ -23,6 +28,10 @@ header {
   color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.dark-mode {
+  background: linear-gradient(90deg, #424242, #616161);
 }
 
 header h1 {
@@ -121,6 +130,24 @@ button {
 
 button:hover {
   background: linear-gradient(90deg, #1565c0, #1e88e5);
+}
+
+button.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+body.dark-mode button.theme-toggle {
+  background: #424242;
+  color: #ffffff;
 }
 
 .message {
