@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
+  const themeToggle = document.getElementById("theme-toggle");
 
   // Function to fetch activities from API
   async function fetchActivities() {
@@ -25,6 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <p><strong>Participants:</strong></p>
+          <div class="participants-list">
+            ${details.participants.length > 0 
+              ? details.participants.map(participant => `
+                <div class="participant-item">
+                  <div class="avatar">${participant.charAt(0).toUpperCase()}</div>
+                  <span>${participant}</span>
+                </div>
+              `).join("") 
+              : '<p>No participants yet</p>'}
+          </div>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -79,6 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
       messageDiv.classList.remove("hidden");
       console.error("Error signing up:", error);
     }
+  });
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    themeToggle.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
   });
 
   // Initialize app

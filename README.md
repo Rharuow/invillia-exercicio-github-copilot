@@ -14,7 +14,7 @@
   - Exercício básico: [Introdução ao GitHub](https://github.com/skills/introduction-to-github)
   - Familiaridade com o [VS Code](https://code.visualstudio.com/)
   - Noções básicas de programação
-- **Duração:** Este exercício leva menos de uma hora para ser concluído.
+- **Duração:** Este exercício leva menos de uma hora paragit checkout -b accelerate-with-copilot ser concluído.
 
 Neste exercício, você irá:
 
